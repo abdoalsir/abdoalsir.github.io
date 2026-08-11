@@ -17,7 +17,9 @@ export default function Contact() {
               </li>
               <li>
                 <strong>LinkedIn</strong><br />
-                <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/abdulrahman-sirelkatim</a>
+                <a href="https://www.linkedin.com/in/abdulrahman-sirelkhatim-18585b22a/" target="_blank" rel="noreferrer">
+                  https://www.linkedin.com/in/abdulrahman-sirelkhatim-18585b22a/
+                </a>
               </li>
               <li>
                 <strong>GitHub</strong><br />
