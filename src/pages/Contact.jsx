@@ -43,8 +43,7 @@ export default function Contact() {
           </Reveal>
 
           <Reveal as="div">
-            {/* Replace YOUR_FORM_ID with your real Formspree endpoint from formspree.io */}
-            <form className="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form className="contact-form" action="https://formspree.io/f/xwleozle" method="POST">
               <input type="text" name="name" placeholder="Name" required />
               <input type="email" name="email" placeholder="Email" required />
               <textarea name="message" rows="6" placeholder="Message" required />
