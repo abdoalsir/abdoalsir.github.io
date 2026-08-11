@@ -124,15 +124,6 @@ export default function Research() {
             treating Grad-CAM output as a generic visual sanity check.
           </p>
         </Reveal>
-
-        <Reveal as="div" style={{ marginTop: 32, maxWidth: 760, marginBottom: 20 }}>
-          <h2 style={{ fontSize: '1.3rem' }}>Institutional Pathway</h2>
-          <p>
-            The Sudanese Consortium for Surgical Development holds a signed MoU with Sudan's Federal
-            Ministry of Health, providing an institutional pathway for proposing clinical deployment once
-            a validated prototype exists.
-          </p>
-        </Reveal>
       </div>
     </section>
   )
