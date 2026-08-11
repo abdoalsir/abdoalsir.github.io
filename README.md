@@ -1,88 +1,86 @@
-# Abdulrahman Sirelkhatim — Portfolio Website
+# Abdulrahman Sirelkhatim — Portfolio
 
-React + Vite portfolio site showcasing 23 medical research projects, deployed to
-GitHub Pages at [abdoalsir.github.io](https://abdoalsir.github.io).
+🔗 **Live site:** [abdoalsir.github.io](https://abdoalsir.github.io)
 
-## Structure
+Personal portfolio of Abdulrahman Sirelkhatim Tagalsir Ali — medical graduate
+(MBBS) and health data scientist. Showcases 23 completed medical research
+data analysis projects across infectious disease, mental health,
+non-communicable diseases, medical education, maternal & child health, and
+healthcare systems, plus an active research project applying deep learning
+to brain tumour classification on African neuroimaging data.
+
+## Pages
+
+| Page | Description |
+|---|---|
+| **Home** | Introduction, bio, and skills overview |
+| **Projects** | All 23 research projects, filterable by category, with a detail modal for each (research question, methods, tools, GitHub link) |
+| **Research** | Deep dive into the ongoing African Neuroimaging AI project — motivation, research questions, methodology, datasets, tech stack |
+| **CV** | Full curriculum vitae with downloadable 1-page and 2-page PDF versions |
+| **Contact** | Contact details, links, and a message form |
+
+## Tech Stack
+
+- **React 19 + Vite** — app framework and build tooling
+- **React Router** — client-side routing
+- **Plain CSS** (`src/index.css`) — design system with CSS custom properties, no framework
+- **gh-pages** — deployment to GitHub Pages
+- **Formspree** — contact form backend
+
+## Project Structure
 
 ```
 src/
-  components/     Navbar, Footer, ProjectCard, ProjectModal, FilterBar, Reveal, PulseSignature
-  pages/          Home, Projects, Research, CV, Contact
+  components/       Navbar, Footer, ProjectCard, ProjectModal, FilterBar, Reveal, PulseSignature
+  pages/            Home, Projects, Research, CV, Contact
   data/
-    projects.json     ← all project data lives here
-    categories.js      category labels + colors
-  index.css       design tokens + all styling
+    projects.json   All project data — the single source of truth for the Projects page
+    categories.js   Category labels and colors
+  index.css         Design tokens and all styling
 admin/
-  add-project.mjs ← local tool for adding new projects (see below)
+  add-project.mjs   Local CLI tool for adding new projects (see below)
 public/
-  cv/             1-page and 2-page CV PDFs
-  photo/          profile photo goes here
-  404.html        GitHub Pages SPA routing fix
+  cv/               1-page and 2-page CV PDFs
+  photo/            Profile photo
+  404.html          GitHub Pages SPA routing fix
 ```
 
-## Running locally
+## Running Locally
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+npm run dev
 ```
 
-## Adding a new project — no code editing required
+Opens at `http://localhost:5173`.
+
+## Adding a New Project
+
+No code editing required — run:
 
 ```bash
 npm run admin
 ```
 
-This starts a local, private form in your terminal. It walks you through the
-project's details, writes the entry into `src/data/projects.json` in the right
-format, then automatically runs `git add`, `git commit`, and `git push` for
-you. GitHub Pages rebuilds automatically after the push — usually live within
-a minute or two.
+This opens a local, private prompt in your terminal that walks you through
+the new project's details (title, category, methods, tools, GitHub link,
+etc.), writes it into `src/data/projects.json` in the correct format, and
+automatically runs `git add`, `git commit`, and `git push`. GitHub Pages
+rebuilds automatically after the push.
 
-Nothing here is public-facing. It only runs on your machine using your own
-`git` login, so there's no login page, no OAuth app, nothing that can be
-accessed by anyone else.
+This tool only runs on your own machine using your own git credentials —
+there's no login, no public admin page, nothing anyone else can access.
 
-If you'd rather publish immediately instead of waiting for GitHub Pages to
-rebuild on its own, also run:
+## Deploying
 
 ```bash
 npm run deploy
 ```
 
-## Manual edits
+Builds the site and pushes the built files to the `gh-pages` branch, which
+is what GitHub Pages actually serves. (Settings → Pages → Source must be set
+to the `gh-pages` branch — a one-time setup step.)
 
-You can also edit `src/data/projects.json` directly in any text editor — it's
-a plain JSON array. Just keep the same field names as the existing entries.
-After editing, commit and push as usual (or use `npm run admin` next time to
-skip the manual JSON editing).
+## License
 
-## Swapping in the real profile photo
-
-Drop the photo at `public/photo/profile.jpg`, then replace the
-`photo-placeholder` div in both `src/pages/Home.jsx` and `src/pages/CV.jsx`
-with:
-
-```jsx
-<img
-  src="/photo/profile.jpg"
-  alt="Abdulrahman Sirelkhatim"
-  style={{ width: 220, height: 220, borderRadius: 16, objectFit: 'cover' }}
-/>
-```
-
-## Contact form
-
-The contact form in `src/pages/Contact.jsx` posts to Formspree. Create a free
-form at [formspree.io](https://formspree.io) and replace `YOUR_FORM_ID` in
-that file with your real form ID.
-
-## Deployment
-
-```bash
-npm run deploy
-```
-
-Builds the site and pushes it to the `gh-pages` branch. First time only: in
-the repo's Settings → Pages, set the source to the `gh-pages` branch.
+Personal portfolio — content and project data © Abdulrahman Sirelkhatim.
