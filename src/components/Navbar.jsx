@@ -5,6 +5,7 @@ const LINKS = [
   { to: '/', label: 'Home', end: true },
   { to: '/projects', label: 'Projects' },
   { to: '/research', label: 'Research' },
+  { to: '/hcics', label: 'HCICS' },
   { to: '/cv', label: 'CV' },
   { to: '/contact', label: 'Contact' },
 ]

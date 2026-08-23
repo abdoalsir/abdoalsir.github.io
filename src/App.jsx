@@ -4,6 +4,7 @@ import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
 import Research from './pages/Research.jsx'
+import HCICS from './pages/HCICS.jsx'
 import CV from './pages/CV.jsx'
 import Contact from './pages/Contact.jsx'
 
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/research" element={<Research />} />
+           <Route path="/hcics" element={<HCICS />} />
           <Route path="/cv" element={<CV />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
