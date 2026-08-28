@@ -449,6 +449,7 @@ section { padding: 72px 0; }
 .cv-sidebar { background: var(--navy); color: #fff; border-radius: var(--radius); padding: 28px; height: fit-content; }
 .cv-sidebar h3 { color: #fff; font-size: 1.1rem; margin-top: 20px; }
 .cv-sidebar a { color: var(--teal-light); }
+.cv-sidebar a.btn { color: #fff; }
 .cv-download { display: block; text-align: center; margin-top: 10px; }
 .cv-section { margin-bottom: 32px; }
 .cv-section h3 { font-size: 1.15rem; border-bottom: 2px solid var(--teal); padding-bottom: 8px; margin-bottom: 14px; }

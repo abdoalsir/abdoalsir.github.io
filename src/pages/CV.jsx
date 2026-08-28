@@ -19,23 +19,27 @@ export default function CV() {
     <section>
       <div className="container cv-layout">
         <Reveal as="aside" className="cv-sidebar">
-          <div className="photo-placeholder" style={{ width: '100%', height: 180 }}>
-            [ Photo placeholder ]
-          </div>
+          <img
+            src="/photo/profile.jpg"
+            alt="Abdulrahman Sirelkhatim"
+            style={{ width: '100%', height: 180, borderRadius: 16, objectFit: 'cover', marginBottom: 28 }}
+          />
           <h3>Contact</h3>
           <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem' }}>
             Omdurman, Sudan<br />
             +249 908 115 725<br />
             <a href="mailto:abdulrahmanalsir4@gmail.com">abdulrahmanalsir4@gmail.com</a><br />
             <a href="https://github.com/abdoalsir" target="_blank" rel="noreferrer">GitHub ↗</a><br />
-            <a href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            {/* ↑ replace with your real LinkedIn URL */}
+            <a href="https://www.linkedin.com/in/abdulrahman-sirelkhatim-18585b22a/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           </p>
           <a href="/cv/Abdulrahman_Sirelkatim_CV_1Page.pdf" className="btn btn-primary cv-download" download>
             Download 1-Page CV
           </a>
           <a href="/cv/Abdulrahman_Sirelkatim_CV_2Page.pdf" className="btn btn-outline cv-download" download>
             Download 2-Page CV
+          </a>
+          <a href="/cv/Abdulrahman_Sirelkatim_CV_Full.pdf" className="btn btn-outline cv-download" download>
+            Download Full CV
           </a>
         </Reveal>
 
