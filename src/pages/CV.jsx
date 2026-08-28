@@ -32,7 +32,7 @@ export default function CV() {
             <a href="https://github.com/abdoalsir" target="_blank" rel="noreferrer">GitHub ↗</a><br />
             <a href="https://www.linkedin.com/in/abdulrahman-sirelkhatim-18585b22a/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           </p>
-          <a href="/cv/Abdulrahman_Sirelkatim_CV_1Page.pdf" className="btn btn-primary cv-download" download>
+          <a href="/cv/Abdulrahman_Sirelkatim_CV_1Page.pdf" className="btn btn-outline cv-download" download>
             Download 1-Page CV
           </a>
           <a href="/cv/Abdulrahman_Sirelkatim_CV_2Page.pdf" className="btn btn-outline cv-download" download>
