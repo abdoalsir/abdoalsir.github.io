@@ -1,10 +1,15 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { categoryColor, categoryLabel } from '../data/categories.js'
 
 export default function ProjectModal({ project, onClose }) {
+  const [lightbox, setLightbox] = useState(null)
+
   useEffect(() => {
     function onKey(e) {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        if (lightbox) setLightbox(null)
+        else onClose()
+      }
     }
     document.addEventListener('keydown', onKey)
     document.body.style.overflow = 'hidden'
@@ -12,7 +17,7 @@ export default function ProjectModal({ project, onClose }) {
       document.removeEventListener('keydown', onKey)
       document.body.style.overflow = ''
     }
-  }, [onClose])
+  }, [onClose, lightbox])
 
   if (!project) return null
 
@@ -31,6 +36,24 @@ export default function ProjectModal({ project, onClose }) {
           <span className="badge">{project.year}</span>
           <span className="badge">{project.sampleSize}</span>
         </div>
+
+        {project.figures && project.figures.length > 0 && (
+          <div className="modal-section">
+            <div className="modal-label">Figures</div>
+            <div className="modal-figures">
+              {project.figures.map((fig) => (
+                <button
+                  key={fig.url}
+                  className="modal-figure"
+                  onClick={() => setLightbox(fig)}
+                >
+                  <img src={fig.url} alt={fig.caption} loading="lazy" />
+                  <span className="modal-figure-caption">{fig.caption}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="modal-section">
           <div className="modal-label">Research Question</div>
@@ -71,6 +94,14 @@ export default function ProjectModal({ project, onClose }) {
           )}
         </div>
       </div>
+
+      {lightbox && (
+        <div className="lightbox-overlay" onClick={(e) => { e.stopPropagation(); setLightbox(null) }}>
+          <button className="modal-close" style={{ position: 'fixed', top: 20, right: 20 }} onClick={() => setLightbox(null)} aria-label="Close">✕</button>
+          <img src={lightbox.url} alt={lightbox.caption} onClick={(e) => e.stopPropagation()} />
+          <div className="lightbox-caption">{lightbox.caption}</div>
+        </div>
+      )}
     </div>
   )
 }

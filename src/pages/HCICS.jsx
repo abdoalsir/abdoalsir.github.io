@@ -34,6 +34,26 @@ export default function HCICS() {
           </a>
         </Reveal>
 
+        <Reveal as="div">
+          <h2 style={{ fontSize: '1.3rem', marginBottom: 4 }}>Live Dashboard</h2>
+          <p style={{ marginBottom: 0 }}>
+            The interactive crisis visualization platform, live and queryable below.
+          </p>
+          <div className="dashboard-embed-wrap">
+            <iframe
+              src="https://sudan-hcics.streamlit.app/?embed=true"
+              title="HCICS Live Dashboard"
+              loading="lazy"
+            />
+          </div>
+          <p style={{ fontSize: '0.85rem' }}>
+            If the embed above doesn't load, open it directly:{' '}
+            <a href="https://sudan-hcics.streamlit.app/" target="_blank" rel="noreferrer">
+              sudan-hcics.streamlit.app ↗
+            </a>
+          </p>
+        </Reveal>
+
         <Reveal as="div" className="modal-section" style={{ maxWidth: 760 }}>
           <h2 style={{ fontSize: '1.3rem' }}>Why This Project</h2>
           <p>
