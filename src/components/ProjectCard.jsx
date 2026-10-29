@@ -1,8 +1,9 @@
 import { categoryColor, categoryLabel } from '../data/categories.js'
+import { useFigures } from '../lib/figures.js'
 
 export default function ProjectCard({ project, onOpen }) {
-  const thumb = project.figures && project.figures[0]
-
+  const figs = useFigures(project)
+  const thumb = figs[0]
   return (
     <button className="project-card reveal in-view" onClick={() => onOpen(project)}>
       {thumb && (
@@ -19,27 +20,15 @@ export default function ProjectCard({ project, onOpen }) {
       <h3 className="card-title">{project.shortTitle}</h3>
       <p className="card-desc">{project.description}</p>
       <div className="card-meta">
-        <span className="badge">{project.degreeType}</span>
-        <span className="badge">{project.year}</span>
+        {project.degreeType && <span className="badge">{project.degreeType}</span>}
+        {project.year && <span className="badge">{project.year}</span>}
       </div>
       <div className="card-actions">
-        <a
-          href={project.githubLink}
-          target="_blank"
-          rel="noreferrer"
-          onClick={(e) => e.stopPropagation()}
-        >
-          GitHub ↗
-        </a>
+        {project.githubLink && (
+          <a href={project.githubLink} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>GitHub ↗</a>
+        )}
         {project.hasPresentation && project.presentationLink && (
-          <a
-            href={project.presentationLink}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(e) => e.stopPropagation()}
-          >
-            Presentation ↗
-          </a>
+          <a href={project.presentationLink} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>Presentation ↗</a>
         )}
       </div>
     </button>

@@ -1,109 +1,88 @@
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal.jsx'
 import PulseSignature from '../components/PulseSignature.jsx'
-import projects from '../data/projects.json'
-
-const CATEGORY_COUNT = new Set(projects.map((p) => p.category)).size
+import Photo from '../components/Photo.jsx'
+import { useProjects, usePapers, useSessions, sessionStats } from '../lib/data.js'
+import { COUNTS } from '../data/config.js'
 
 export default function Home() {
+  const { projects } = useProjects()
+  const { papers } = usePapers()
+  const { sessions } = useSessions()
+  const st = sessionStats(sessions)
+
+  const tiles = [
+    { to: '/projects', num: projects.length, label: 'analysis projects documented', sub: `${COUNTS.delivered} delivered in total` },
+    { to: '/research', num: papers.length, label: 'papers, reports and proposals', sub: 'trauma care, stroke, rural health, neuroimaging AI' },
+    { to: '/training', num: st.hours, label: 'hours of facilitation', sub: `${st.count} sessions · ${st.universities} universities` },
+    { to: '/cv', num: '800+', label: 'students led as SUMSA President', sub: 'plus SCSD, MedSIN, IFMSA roles' },
+  ]
+
   return (
     <>
       <section className="hero">
         <PulseSignature />
-        <div className="container">
-          <div className="hero-eyebrow">Medical Graduate · Health Data Scientist</div>
-          <h1>Abdulrahman Sirelkhatim</h1>
-          <p className="hero-tagline">Bridging clinical medicine and computational research</p>
-          <p className="hero-sentence">
-            First-generation medical graduate (MBBS, Sudan University of Science and Technology) with
-            {' '}{projects.length} completed data analysis projects across {CATEGORY_COUNT} research areas —
-            from infectious disease and mental health to medical education, delivered through revolution,
-            pandemic, and ongoing conflict.
-          </p>
-          <div className="hero-ctas">
-            <Link to="/projects" className="btn btn-primary">View Research Portfolio</Link>
-            <Link to="/cv" className="btn btn-outline">Download CV</Link>
+        <div className="container hero-grid">
+          <div>
+            <div className="hero-eyebrow">Medical Graduate · Health Data Scientist</div>
+            <h1>Abdulrahman Sirelkhatim Tagalsir Ali</h1>
+            <p className="hero-tagline">Bridging clinical medicine and computational research</p>
+            <p className="hero-sentence">
+              MBBS (Sudan University of Science and Technology, 2026). I analyse clinical data for researchers,
+              study how Sudan's health system holds up under conflict, and am building a deep-learning project on
+              African brain MRI. All of it done through revolution, a pandemic, a strike and a war.
+            </p>
+            <div className="hero-ctas">
+              <Link to="/projects" className="btn btn-primary">See the work</Link>
+              <Link to="/cv" className="btn btn-outline">Read my journey</Link>
+            </div>
           </div>
+          <div className="hero-photo"><Photo /></div>
         </div>
       </section>
 
-      <section className="section-white">
-        <div className="container about-grid">
-          <Reveal>
-            <img
-                src="/photo/profile.jpg"
-                alt="Abdulrahman Sirelkhatim"
-                style={{ width: 220, height: 220, borderRadius: 16, objectFit: 'cover' }}
-              />
-            <ul className="stat-list">
-              <li><span className="stat-num">{projects.length}</span>research projects completed</li>
-              <li><span className="stat-num">10+</span>medical specialties covered</li>
-              <li><span className="stat-num">7</span>years of organizational leadership</li>
-              <li><span className="stat-num">800+</span>students served as SUMSA President</li>
-            </ul>
-          </Reveal>
-          <Reveal as="div" className="about-text">
-            <h2 className="section-title">About</h2>
-            <p>
-              I'm a medical graduate (MBBS, SUST, 2026) and health data scientist combining clinical
-              training with advanced statistical and machine learning skills. Since October 2025 I've
-              delivered {projects.length}+ complete data analysis projects for MD, MBBS, Clinical Master, and
-              Doctoral researchers across infectious disease, psychiatry, ophthalmology, maternal health,
-              and public health — full-service work from study design through publication-ready
-              visualizations and thesis defense presentations.
-            </p>
-            <p>
-              Alongside research, I've held senior leadership roles including President of SUMSA
-              (Sudan University Medical Students' Association, 800+ members) and Deputy Director at the
-              Sudanese Consortium for Surgical Development — building organizational systems (mobile
-              apps, certificate platforms, digital archives) while maintaining medical education through
-              revolution, COVID-19, a faculty strike, and ongoing armed conflict.
-            </p>
-            <p>
-              My current focus is bringing clinical neuroscience training together with machine learning
-              for computational neuroscience research — starting with an explainable brain tumour
-              classification project informed by what a clinician actually needs from a diagnostic model.
-            </p>
-          </Reveal>
+      <section className="section-white tight">
+        <div className="container">
+          <div className="home-tiles">
+            {tiles.map((t) => (
+              <Link to={t.to} className="home-tile" key={t.to}>
+                <span className="home-tile-num">{t.num}</span>
+                <span className="home-tile-label">{t.label}</span>
+                <span className="home-tile-sub">{t.sub}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       <section>
-        <div className="container">
-          <Reveal>
-            <h2 className="section-title">Skills</h2>
-            <p className="section-sub">Clinical training and computational tooling, applied together.</p>
-          </Reveal>
-          <div className="skills-grid">
-            <Reveal className="skill-card" as="div">
-              <h3>Statistical Analysis</h3>
-              <div className="skill-tags">Regression modeling · Survival analysis · Diagnostic evaluation (ROC, sensitivity/specificity) · Hypothesis testing · SPSS · Python (statsmodels, SciPy)</div>
-            </Reveal>
-            <Reveal className="skill-card" as="div">
-              <h3>Machine Learning</h3>
-              <div className="skill-tags">scikit-learn · Supervised & unsupervised learning · Model evaluation · Cross-validation · GeoPandas / geospatial analysis</div>
-            </Reveal>
-            <Reveal className="skill-card" as="div">
-              <h3>Software Development</h3>
-              <div className="skill-tags">Python · Flutter · HTML/CSS/PHP · SQL · Git/GitHub · Google Apps Script</div>
-            </Reveal>
-            <Reveal className="skill-card" as="div">
-              <h3>Clinical Foundation</h3>
-              <div className="skill-tags">MBBS clinical rotations (14+ specialties) · ACLS & BLS certified · Neuroscience & neuroanatomy · Research methodology</div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-white">
-        <div className="container">
-          <Reveal style={{ textAlign: 'center' }}>
-            <h2 className="section-title">Explore the research</h2>
-            <p className="section-sub" style={{ margin: '0 auto 28px' }}>
-              {projects.length} projects spanning infectious disease, mental health, non-communicable
-              disease, medical education, maternal &amp; child health, and healthcare systems research.
+        <div className="container about-grid">
+          <Reveal as="div" className="about-text">
+            <div className="kicker">About</div>
+            <h2 className="section-title">Clinical training, applied to data</h2>
+            <p>
+              Since October 2025 I have delivered {COUNTS.delivered} data analysis projects for MD, MBBS, clinical
+              master and doctoral researchers across 10+ specialties: study design, cleaning, regression and
+              survival models, diagnostic evaluation, publication-ready figures and thesis defence slides.
             </p>
-            <Link to="/projects" className="btn btn-primary">Browse All Projects</Link>
+            <p>
+              Alongside that I co-authored qualitative studies on mass casualty preparedness in Sudanese hospitals,
+              wrote my graduation thesis on stroke awareness, and helped run a post-conflict baseline assessment at Um Katti
+              Hospital. I have held senior roles as SUMSA President and SCSD Deputy Director.
+            </p>
+            <p>
+              Next: graduate study in computational neuroscience. The neuroimaging project is the first step,
+              built around what a clinician actually needs from a diagnostic model.
+            </p>
+          </Reveal>
+          <Reveal as="div">
+            <div className="kicker">Toolkit</div>
+            <ul className="toolkit">
+              <li><strong>Statistics</strong><span>Regression · survival · ROC · SPSS · statsmodels</span></li>
+              <li><strong>Machine learning</strong><span>scikit-learn · TensorFlow · Grad-CAM · GeoPandas</span></li>
+              <li><strong>Tools</strong><span>Python · SQL · Git/GitHub · Google Apps Script</span></li>
+              <li><strong>Clinical</strong><span>10 clinical rotations · survey methodology · scientific writing</span></li>
+            </ul>
           </Reveal>
         </div>
       </section>

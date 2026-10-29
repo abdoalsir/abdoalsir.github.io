@@ -1,4 +1,5 @@
 import Reveal from '../components/Reveal.jsx'
+import { PROFILE } from '../data/config.js'
 
 export default function Contact() {
   return (
@@ -6,6 +7,10 @@ export default function Contact() {
       <div className="container">
         <Reveal>
           <h1 className="section-title">Contact</h1>
+          <p className="section-sub">
+            I'm currently open to remote data analysis collaborations, research assistant positions, and
+            graduate study opportunities.
+          </p>
         </Reveal>
 
         <div className="contact-grid">
@@ -17,9 +22,7 @@ export default function Contact() {
               </li>
               <li>
                 <strong>LinkedIn</strong><br />
-                <a href="https://www.linkedin.com/in/abdulrahman-sirelkhatim-18585b22a/" target="_blank" rel="noreferrer">
-                  https://www.linkedin.com/in/abdulrahman-sirelkhatim-18585b22a/
-                </a>
+                {PROFILE.linkedin ? <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">{PROFILE.linkedin.replace(/^https?:\/\/(www\.)?/, '')}</a> : <span>Coming soon</span>}
               </li>
               <li>
                 <strong>GitHub</strong><br />
@@ -43,7 +46,8 @@ export default function Contact() {
           </Reveal>
 
           <Reveal as="div">
-            <form className="contact-form" action="https://formspree.io/f/xwleozle" method="POST">
+            {/* Replace YOUR_FORM_ID with your real Formspree endpoint from formspree.io */}
+            <form className="contact-form" action={`https://formspree.io/f/${PROFILE.formspreeId}`} method="POST">
               <input type="text" name="name" placeholder="Name" required />
               <input type="email" name="email" placeholder="Email" required />
               <textarea name="message" rows="6" placeholder="Message" required />

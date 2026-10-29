@@ -2,12 +2,14 @@ import Reveal from '../components/Reveal.jsx'
 import Accordion from '../components/Accordion.jsx'
 import StatStrip from '../components/StatStrip.jsx'
 import { Link } from 'react-router-dom'
+import { PROFILE, CV_FILES } from '../data/config.js'
+import Photo from '../components/Photo.jsx'
 
 const STATS = [
-  { num: '28', label: 'Data analysis projects delivered' },
+  { num: '25', label: 'Data analysis projects delivered' },
   { num: '800+', label: 'Students served as SUMSA President' },
-  { num: '2,800+', label: 'Documents archived from scratch' },
-  { num: '43', label: 'Facilitation sessions, 100+ hours' },
+  { num: '14,000+', label: 'Documents archived from scratch' },
+  { num: '43', label: 'Facilitation sessions, 106 hours' },
   { num: '400+', label: 'Voters in the 2026 SUMSA election' },
   { num: '371', label: 'Partnership letters drafted' },
   { num: '650', label: 'Patients served leading a field mission' },
@@ -19,28 +21,28 @@ export default function CV() {
     <section>
       <div className="container cv-layout">
         <Reveal as="aside" className="cv-sidebar">
-          <img
-            src="/photo/profile.jpg"
-            alt="Abdulrahman Sirelkhatim"
-            style={{ width: '100%', height: 180, borderRadius: 16, objectFit: 'cover', marginBottom: 28 }}
-          />
+          <Photo className="cv-photo" />
           <h3>Contact</h3>
           <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem' }}>
             Omdurman, Sudan<br />
             +249 908 115 725<br />
             <a href="mailto:abdulrahmanalsir4@gmail.com">abdulrahmanalsir4@gmail.com</a><br />
             <a href="https://github.com/abdoalsir" target="_blank" rel="noreferrer">GitHub ↗</a><br />
-            <a href="https://www.linkedin.com/in/abdulrahman-sirelkhatim-18585b22a/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            {PROFILE.linkedin && <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>}
           </p>
-          <a href="/cv/Abdulrahman_Sirelkatim_CV_1Page.pdf" className="btn btn-outline cv-download" download>
+          <a href={CV_FILES.onePage} className="btn btn-primary cv-download" download>
             Download 1-Page CV
           </a>
-          <a href="/cv/Abdulrahman_Sirelkatim_CV_2Page.pdf" className="btn btn-outline cv-download" download>
-            Download 2-Page CV
-          </a>
-          <a href="/cv/Abdulrahman_Sirelkatim_CV_Full.pdf" className="btn btn-outline cv-download" download>
-            Download Full CV
-          </a>
+          {CV_FILES.twoPage && (
+            <a href={CV_FILES.twoPage} className="btn btn-outline cv-download" download>
+              Download 2-Page CV
+            </a>
+          )}
+          {CV_FILES.full && (
+            <a href={CV_FILES.full} className="btn btn-outline cv-download" download>
+              Download Full CV
+            </a>
+          )}
         </Reveal>
 
         <div>
@@ -76,12 +78,12 @@ export default function CV() {
             </div>
             <div className="cv-entry">
               <div className="cv-entry-title">Bachelor of Medicine, Bachelor of Surgery (MBBS)</div>
-              <div className="cv-entry-meta">Sudan University of Science and Technology · Nov 2018 – Jul 2026 · GPA 3.22/4.0</div>
+              <div className="cv-entry-meta">Sudan University of Science and Technology · Nov 2018 – Jul 2026 · GPA 3.24/4.0 · 22nd of 127 · First Degree Honors</div>
               <p style={{ marginTop: 6 }}>
                 Maintained academic progression through the 2019 revolution (10-month closure), COVID-19
                 (6-month closure), a 2021 faculty strike (6 months), and ongoing displacement since the
-                April 2023 armed conflict. Graduation thesis: "KAP Study on Stroke Awareness Among
-                Sudanese Population 2025" — Grade A.
+                April 2023 armed conflict. Graduation thesis: "Knowledge, Attitudes and Practices on Stroke
+                Manifestations and Complications Among Sudanese Population, Khartoum 2025" — Grade A.
               </p>
             </div>
             <div className="cv-entry">
@@ -115,7 +117,7 @@ export default function CV() {
               <div className="cv-entry-title">Freelance Health Data Analyst</div>
               <div className="cv-entry-meta">Self-Employed · Oct 2025 – Present</div>
               <ul style={{ color: 'var(--text-soft)', paddingLeft: 20, marginTop: 8 }}>
-                <li>28 complete data analysis projects for MD, MBBS, Clinical Master, and Doctoral researchers across 10+ specialties</li>
+                <li>25 complete data analysis projects for MD, MBBS, Clinical Master, and Doctoral researchers across 10+ specialties</li>
                 <li>Full-service support: study design, data cleaning, regression modeling, survival analysis, diagnostic evaluation</li>
                 <li>11 thesis defense presentations prepared — all clients successfully defended</li>
                 <li>Earned first income within 6 weeks while supporting family through displacement</li>
@@ -127,7 +129,6 @@ export default function CV() {
               <ul style={{ color: 'var(--text-soft)', paddingLeft: 20, marginTop: 8 }}>
                 <li>Led recruitment across 4 departments — 80+ applications reviewed, 20–30 interviews conducted</li>
                 <li>Defined KPIs for every organizational position, from Chief Visionary Officer to entry-level officers</li>
-                <li>Built the consortium's website from scratch (HTML/CSS/PHP, 16+ pages) and trained staff to maintain it</li>
                 <li>Acted as department director during a 5-week absence, attending executive board meetings</li>
               </ul>
             </div>
@@ -140,18 +141,24 @@ export default function CV() {
               <h2>Organizational Leadership — SUMSA</h2>
             </div>
             <p className="journey-section-intro">
-              Seven progressively senior roles across the Sudan University Medical Students' Association,
+              Progressively senior roles across the Sudan University Medical Students' Association,
               the largest medical student body at SUST.
             </p>
 
+            <Accordion
+              title="Advisory Board Member"
+              meta="6-member board · Aug 2026"
+              bullets={[
+                "Invited by SUMSA's current leadership to join its first-ever Advisory Board, a sign that the governance systems built in earlier terms keep evolving without the original leadership",
+              ]}
+            />
             <Accordion
               title="President"
               meta="800+ students · Mar – Dec 2025"
               defaultOpen
               bullets={[
                 "Rebuilt SUMSA from near-collapse — personally recruited the executive committee and restored full operational capacity within 2 months",
-                "Built the SUMSA M&E mobile app: term management, member database, weighted 5-pillar evaluation, automated award generation",
-                "Built a Windows certificate generation program with QR-code verification and bulk generation",
+                "Designed the SUMSA M&E system: term management, member database, weighted 5-pillar evaluation, automated award generation",
                 "Co-coordinated MedXplore 2025 — a 7-day orientation program for 465 students (56% of the student body)",
                 "Led SPDP, a 16-session professional development program attended by 216 members",
                 "Led constitutional reform ratified by 400+ voters — every proposed amendment passed",
@@ -164,7 +171,7 @@ export default function CV() {
               defaultOpen
               bullets={[
                 "Directed all association operations as de facto president (no president elected that year)",
-                "Built a 2,800+ document digital archive from scratch over 3 months, sourced from 38+ email accounts and multiple platforms",
+                "Built a 14,000+ document digital archive from scratch over 3 months, sourced from 38+ email accounts and multiple platforms",
                 "Organized 36 meetings, drafted every agenda, and published minutes within 48 hours each time",
                 "Coordinated fundraising that raised the SDG equivalent of ~$5,000, supporting 98+ war-affected students",
                 "Achieved 100% constitutional compliance across the term",
@@ -182,7 +189,7 @@ export default function CV() {
             />
             <Accordion
               title="Fundraising Committee Head"
-              meta="8-member committee · Jun – Dec 2025"
+              meta="8-member committee · Jun – Sep 2025"
               bullets={[
                 "Led an 8-member committee supporting students financially affected by the April 2023 conflict",
                 "Directed ~$500 equivalent in support to 15+ students since June 2025",
@@ -283,8 +290,16 @@ export default function CV() {
               meta="MedSIN-Sudan General Assembly · 2022"
               bullets={["Managed plenary sessions: presentation, attendance, minutes, and voting oversight"]}
             />
+            <Accordion
+              title="Organizer, Fundamentals of Nursing Course"
+              meta="Sharg Alneel Hospital · Oct – Dec 2026"
+              bullets={[
+                "Support delivery of the curriculum and facilitators' guide, keeping sessions on schedule",
+                "Delivered 3 sessions to nursing staff: Medical Ethics, Professionalism and Patients' Rights; Counselling Skills; Vital-Sign Technique and Monitoring",
+              ]}
+            />
             <p style={{ marginTop: 10, fontSize: '0.9rem' }}>
-              <strong>Total facilitation record:</strong> 43 sessions, 100+ hours across 7 years (2019–2026).
+              <strong>Total facilitation record:</strong> 43 sessions, 106 hours across 7 years (2019–2026).
               Certified Facilitator, IFMSA PRET Training, Egypt (2022).
             </p>
           </Reveal>
@@ -304,14 +319,14 @@ export default function CV() {
                 across 19 villages. Co-designed and administered a stratified household survey of 262
                 households (1,355 persons), conducted 26 key informant interviews, and built 8
                 standardized structured-observation checklists spanning infrastructure, drug availability,
-                and reproductive health programme performance. Co-authored the final report submitted to
+                and reproductive health programme performance. Main author of the final report submitted to
                 SUST's Department of Community Medicine. (April 2026)
               </p>
             </div>
 
             <div className="cv-entry">
               <div className="cv-entry-title">Group Head, SUMSA Medical Mission — Garri Area</div>
-              <div className="cv-entry-meta">Khartoum State · April 2026</div>
+              <div className="cv-entry-meta">Khartoum State · Jun 2026</div>
               <p style={{ marginTop: 6 }}>
                 Led a field deployment of 32 students, 8 lab members, a pharmacist, and security, serving
                 600–650 patients in one of Khartoum's most war-affected areas — overseeing 6 offices from
@@ -320,18 +335,18 @@ export default function CV() {
             </div>
             <div className="cv-entry">
               <div className="cv-entry-title">Vice Head, Organizing Committee — SUMSA Medical Mission</div>
-              <div className="cv-entry-meta">Garri · Dec 2025 – Apr 2026</div>
+              <div className="cv-entry-meta">Garri · Dec 2025 – Sep 2026</div>
             </div>
             <div className="cv-entry">
               <div className="cv-entry-title">Executive Board Representative — White Nile State Medical Mission</div>
-              <div className="cv-entry-meta">Jan 2023</div>
+              <div className="cv-entry-meta">Feb 2023</div>
             </div>
             <div className="cv-entry">
               <div className="cv-entry-title">MBBS Clinical Training</div>
               <div className="cv-entry-meta">SUST · 2022 – 2026 · Multiple teaching hospitals</div>
               <p style={{ marginTop: 6 }}>
-                Full clinical rotations across 14 specialties including Internal Medicine, Surgery,
-                OB/GYN, Pediatrics, Psychiatry, Ophthalmology, and Emergency Medicine.
+                Clinical rotations across Internal Medicine, General Surgery, OB/GYN, Pediatrics, Ophthalmology,
+                ENT, Orthopedics, Neurosurgery, Pediatric Surgery and Urology. Completed a 132-page rural residency report.
               </p>
             </div>
           </Reveal>
@@ -344,11 +359,27 @@ export default function CV() {
             </div>
 
             <Link to="/projects" className="project-link-card">
-              <div className="project-link-card-title">28 Medical Research Data Analysis Projects</div>
+              <div className="project-link-card-title">25 Medical Research Data Analysis Projects</div>
               <div className="project-link-card-meta">Freelance · Python · SPSS · 2024–2026</div>
               <div className="project-link-card-desc">
                 Infectious disease, psychiatry, ophthalmology, maternal health, and medical education
                 research. Full portfolio →
+              </div>
+            </Link>
+
+            <Link to="/research" className="project-link-card">
+              <div className="project-link-card-title">Research: 5 papers, reports and proposals</div>
+              <div className="project-link-card-meta">Qualitative studies · KAP thesis · Field report · Neuroimaging AI</div>
+              <div className="project-link-card-desc">
+                Mass casualty preparedness, stroke awareness, a rural hospital baseline, and an active deep-learning project. Read more →
+              </div>
+            </Link>
+
+            <Link to="/training" className="project-link-card">
+              <div className="project-link-card-title">Facilitation portfolio</div>
+              <div className="project-link-card-meta">IFMSA Certified Facilitator · 43 sessions · 106 hours</div>
+              <div className="project-link-card-desc">
+                Session log across 9 universities, 2020–2026. See the record →
               </div>
             </Link>
 
@@ -359,15 +390,6 @@ export default function CV() {
                 Geospatial platform fusing IOM displacement data with health-facility data for Sudan. Read more →
               </div>
             </Link>
-
-            <div className="project-link-card" style={{ borderLeftColor: 'var(--border)', cursor: 'default' }}>
-              <div className="project-link-card-title">SUMSA M&amp;E Mobile App + Windows Certificate System</div>
-              <div className="project-link-card-meta">Flutter · Windows · VBA · 2025</div>
-              <div className="project-link-card-desc">
-                A 5-pillar weighted evaluation system and an HTML-template, QR-verified certificate
-                generator, both built and deployed for SUMSA's 800+ members.
-              </div>
-            </div>
 
             <div className="project-link-card" style={{ borderLeftColor: 'var(--border)', cursor: 'default' }}>
               <div className="project-link-card-title">SpaceX Falcon 9 Landing Prediction</div>
@@ -391,16 +413,12 @@ export default function CV() {
                 <p>Python (pandas, NumPy, scikit-learn, SciPy, statsmodels, GeoPandas) · SPSS · SQL · Jupyter · VS Code</p>
               </div>
               <div className="skill-cat-card">
-                <h4>Software Development</h4>
-                <p>Flutter · HTML/CSS/PHP · Windows app development · Git/GitHub · Google Apps Script</p>
-              </div>
-              <div className="skill-cat-card">
                 <h4>Productivity &amp; Collaboration</h4>
                 <p>Microsoft Office &amp; Google Workspace (advanced) · Notion · Asana · digital archive management</p>
               </div>
               <div className="skill-cat-card">
                 <h4>Clinical &amp; Medical</h4>
-                <p>ACLS &amp; BLS certified · full clinical rotations across 14+ specialties · study design &amp; survey methodology</p>
+                <p>Clinical rotations in 10 specialties · study design &amp; survey methodology · scientific writing</p>
               </div>
             </div>
           </Reveal>
@@ -440,8 +458,8 @@ export default function CV() {
               <li>IBM Data Science Fundamentals with Python and SQL — Coursera, 2024</li>
               <li>MITx 6.00.1x &amp; 6.00.2x, Introduction to CS &amp; Computational Thinking — edX, 2025</li>
               <li>MIT Emerging Talent Program — Foundation Track, 2024</li>
-              <li>Advanced Cardiac Life Support (ACLS) — 2024–2026 · Basic Life Support (BLS) — 2024–2026</li>
-              <li>Certified Facilitator — IFMSA PRET Training, Egypt, 2022</li>
+              <li>Certified Facilitator — IFMSA PRET Training, Egypt, 2022 (90+ hours of facilitation training)</li>
+              <li>IFMSA Online Global Health Advocacy (OGHA) Workshop — 2022</li>
               <li>Research Methodology Workshop — MedStat, 2021</li>
             </ul>
           </Reveal>
@@ -450,7 +468,7 @@ export default function CV() {
             <h3>Languages</h3>
             <ul style={{ color: 'var(--text-soft)', paddingLeft: 20 }}>
               <li>Arabic — Native</li>
-              <li>English — Fluent (C1), 600+ hours of intensive instruction</li>
+              <li>English — Fluent (C1, Duolingo English Test 140), 600+ hours of intensive instruction</li>
             </ul>
           </Reveal>
 

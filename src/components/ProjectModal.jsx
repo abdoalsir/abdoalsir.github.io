@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useFigures } from '../lib/figures.js'
 import { categoryColor, categoryLabel } from '../data/categories.js'
 
 export default function ProjectModal({ project, onClose }) {
   const [lightbox, setLightbox] = useState(null)
+  const figures = useFigures(project)
 
   useEffect(() => {
     function onKey(e) {
@@ -37,11 +39,11 @@ export default function ProjectModal({ project, onClose }) {
           <span className="badge">{project.sampleSize}</span>
         </div>
 
-        {project.figures && project.figures.length > 0 && (
+        {figures.length > 0 && (
           <div className="modal-section">
             <div className="modal-label">Figures</div>
             <div className="modal-figures">
-              {project.figures.map((fig) => (
+              {figures.map((fig) => (
                 <button
                   key={fig.url}
                   className="modal-figure"

@@ -6,6 +6,7 @@ const LINKS = [
   { to: '/projects', label: 'Projects' },
   { to: '/research', label: 'Research' },
   { to: '/hcics', label: 'HCICS' },
+  { to: '/training', label: 'Training' },
   { to: '/cv', label: 'CV' },
   { to: '/contact', label: 'Contact' },
 ]

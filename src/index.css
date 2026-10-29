@@ -449,7 +449,6 @@ section { padding: 72px 0; }
 .cv-sidebar { background: var(--navy); color: #fff; border-radius: var(--radius); padding: 28px; height: fit-content; }
 .cv-sidebar h3 { color: #fff; font-size: 1.1rem; margin-top: 20px; }
 .cv-sidebar a { color: var(--teal-light); }
-.cv-sidebar a.btn { color: #fff; }
 .cv-download { display: block; text-align: center; margin-top: 10px; }
 .cv-section { margin-bottom: 32px; }
 .cv-section h3 { font-size: 1.15rem; border-bottom: 2px solid var(--teal); padding-bottom: 8px; margin-bottom: 14px; }
@@ -473,6 +472,13 @@ section { padding: 72px 0; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--teal); outline: none; }
 .open-note { background: rgba(13,148,136,0.08); border-left: 3px solid var(--teal); padding: 14px 18px; border-radius: 8px; margin-top: 18px; font-size: 0.92rem; }
 
+/* ---------- Footer ---------- */
+footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 32px 0; font-size: 0.85rem; }
+/* ==========================================================
+   JOURNEY PAGE ADDITIONS — append this block to src/index.css
+   ========================================================== */
+
+/* ---------- Stat strip (pull-quote numbers) ---------- */
 .stat-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -512,6 +518,7 @@ section { padding: 72px 0; }
 .journey-section h2 { font-size: 1.5rem; }
 .journey-section-intro { color: var(--text-soft); margin-bottom: 22px; max-width: 680px; }
 
+/* ---------- Accordion (used for dense role lists) ---------- */
 .accordion-item {
   background: var(--bg-white);
   border: 1px solid var(--border);
@@ -543,6 +550,7 @@ section { padding: 72px 0; }
 .accordion-bullets { margin: 10px 0 0; padding-left: 20px; }
 .accordion-bullets li { font-size: 0.88rem; color: var(--text-soft); margin-bottom: 6px; line-height: 1.55; }
 
+/* ---------- Project link cards (Selected Projects section) ---------- */
 .project-link-card {
   display: block;
   background: var(--bg-white);
@@ -558,12 +566,12 @@ section { padding: 72px 0; }
 .project-link-card-meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--teal); margin-bottom: 8px; }
 .project-link-card-desc { font-size: 0.88rem; color: var(--text-soft); }
 
+/* ---------- Skill category blocks ---------- */
 .skill-cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 @media (max-width: 700px) { .skill-cat-grid { grid-template-columns: 1fr; } }
 .skill-cat-card { background: var(--bg-white); border-radius: var(--radius); box-shadow: var(--shadow-card); padding: 20px; }
 .skill-cat-card h4 { font-size: 0.95rem; margin-bottom: 10px; color: var(--teal); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; }
 .skill-cat-card p { font-size: 0.88rem; margin: 0; color: var(--text-soft); }
-
 /* ---------- Project card figure thumbnail ---------- */
 .card-thumb {
   width: calc(100% + 44px);
@@ -630,6 +638,3 @@ section { padding: 72px 0; }
   text-align: center;
   background: var(--bg-white);
 }
-
-/* ---------- Footer ---------- */
-footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 32px 0; font-size: 0.85rem; }

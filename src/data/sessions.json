@@ -1,0 +1,432 @@
+[
+ {
+  "id": 1,
+  "session": "IFMSA 101",
+  "date": "2020-07-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 2,
+  "session": "SCOPE 101",
+  "date": "2021-08-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 3,
+  "session": "How to be a contact person",
+  "date": "2022-01-14",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 4,
+  "session": "Academic Quality in Research Exchange",
+  "date": "2022-07-15",
+  "organization": "AMSA",
+  "university": "Ahfad University for Women",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 5,
+  "session": "Academic Quality",
+  "date": "2022-07-21",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 6,
+  "session": "Academic Quality",
+  "date": "2022-08-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 7,
+  "session": "Activation Process",
+  "date": "2022-08-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 8,
+  "session": "Intercultural Learning",
+  "date": "2022-08-22",
+  "organization": "MedSIN-SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 9,
+  "session": "Activation Process",
+  "date": "2022-09-01",
+  "organization": "KrMSA",
+  "university": "Karray University",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 10,
+  "session": "Academic Quality",
+  "date": "2022-09-01",
+  "organization": "MedSIN-Sudan",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 11,
+  "session": "Global Health in Exchange",
+  "date": "2022-09-15",
+  "organization": "MedSIN-Sudan",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 12,
+  "session": "UHC In Exchange",
+  "date": "2022-09-18",
+  "organization": "MedSIN-Sudan",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 13,
+  "session": "SCOPE Global Health Framework",
+  "date": "2022-10-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 14,
+  "session": "Exchange 101",
+  "date": "2022-10-02",
+  "organization": "WNMSA",
+  "university": "White Nile University",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 15,
+  "session": "Intercultural learning",
+  "date": "2022-10-02",
+  "organization": "KMSA",
+  "university": "Khartoum University",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 16,
+  "session": "Academic Quality",
+  "date": "2022-10-02",
+  "organization": "MedSIN-Sudan",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 17,
+  "session": "Exchange 101",
+  "date": "2022-10-02",
+  "organization": "MedSIN-Sudan",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 18,
+  "session": "How to establish Public Health Exchanges",
+  "date": "2022-10-02",
+  "organization": "MedSIN-Sudan",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 19,
+  "session": "Exchange and Accreditation",
+  "date": "2022-10-03",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 20,
+  "session": "The perfect Local Exchange Officer",
+  "date": "2022-12-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 21,
+  "session": "Global Health within Exchange",
+  "date": "2022-12-01",
+  "organization": "NMSA",
+  "university": "Neelien University",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 22,
+  "session": "Exchange Team Management",
+  "date": "2023-10-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 23,
+  "session": "Intercultural Learning",
+  "date": "2023-11-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 24,
+  "session": "Global Health and Global Health Education",
+  "date": "2023-11-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 25,
+  "session": "External Representation",
+  "date": "2023-11-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 26,
+  "session": "Academic Quality",
+  "date": "2024-08-01",
+  "organization": "MMSA",
+  "university": "Mogtarbeen University",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 27,
+  "session": "Global Surgery",
+  "date": "2025-02-01",
+  "organization": "MedSIN-Sudan",
+  "university": "",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 28,
+  "session": "SUMSA History",
+  "date": "2025-11-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 29,
+  "session": "Accountability and Responsibility",
+  "date": "2025-11-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 30,
+  "session": "Leadership and Team Development",
+  "date": "2025-11-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 31,
+  "session": "Health Management",
+  "date": "2025-12-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 32,
+  "session": "SUMSA History",
+  "date": "2025-12-01",
+  "organization": "ZAMSA",
+  "university": "Al-Zaeim Al-Azhary University",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 33,
+  "session": "AI & Digital Health Equity",
+  "date": "2026-03-01",
+  "organization": "ZAMSA",
+  "university": "Al-Zaeim Al-Azhary University",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 34,
+  "session": "SCOPE 101",
+  "date": "2026-03-01",
+  "organization": "NUSMSA",
+  "university": "National University Sudan",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 35,
+  "session": "SCORE 101",
+  "date": "2026-04-01",
+  "organization": "NUSMSA",
+  "university": "National University Sudan",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 36,
+  "session": "Leadership and Problem Solving",
+  "date": "2026-04-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 37,
+  "session": "Google Workspace",
+  "date": "2026-04-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 2.0
+ },
+ {
+  "id": 38,
+  "session": "Google Workspace",
+  "date": "2026-08-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 4.0
+ },
+ {
+  "id": 39,
+  "session": "Project Management",
+  "date": "2026-10-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 40,
+  "session": "Google Workspace",
+  "date": "2026-10-01",
+  "organization": "SUMSA",
+  "university": "Sudan University of Science and Technology",
+  "format": "Online",
+  "language": "English",
+  "hours": 3.0
+ },
+ {
+  "id": 41,
+  "session": "Medical Ethics, Professionalism & Patients' Rights",
+  "date": "2026-10-21",
+  "organization": "Sharg Alneel Hospital",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 1.0
+ },
+ {
+  "id": 42,
+  "session": "Counselling Skills in Nursing Practice",
+  "date": "2026-10-21",
+  "organization": "Sharg Alneel Hospital",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 1.0
+ },
+ {
+  "id": 43,
+  "session": "Vital-sign technique, interpretation and Monitoring",
+  "date": "2026-10-01",
+  "organization": "Sharg Alneel Hospital",
+  "university": "",
+  "format": "Physical",
+  "language": "English",
+  "hours": 3.0
+ }
+]
